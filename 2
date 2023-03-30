@@ -1,0 +1,27 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+
+int giaithua(int n){
+	if(n==0){
+		return 1;
+	}else{
+		return giaithua(n-1)*n;
+	}
+}
+double S(double x, int n){
+	if(n==0){
+		return 1;
+	}else{
+		return S(x,n-1) +pow(x, n)/giaithua(n);
+	}
+}
+int main(){
+	int n;int x;
+	cout<<"Nhap n: "; cin>>n;
+	cout<<"Nhap x: "; cin>>x;
+	double T = S(x,n);
+	cout<< "Vay gia tri cua bieu thuc nay la: " << T<<endl;
+	return 0;
+}
