@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+const int Max = 100;
+int Tong(int a[], int n) {
+	if (n == 0)
+		return 0;
+	if (a[n] % 2 == 0)
+		return Tong(a, n - 1) + a[n];
+	else
+		return Tong(a, n - 1);
+}
+void xuat(int a[], int n){
+	for(int i=1; i<=n; i++){
+		cout<<a[i]<<" ";
+	}
+}
+int main() {
+	int n;
+	int a[Max];
+	cout << "Nhap n: ";
+	cin >> n;
+	for (int i = 1; i <= n;i++) {
+		cout << "Nhap a[" << i << "]=" << endl;
+		cin >> a[i];
+	}
+	xuat(a,n);
+	cout << "\nVay tong chan la: " << Tong(a,n) << endl;
+	return 0;
+}
